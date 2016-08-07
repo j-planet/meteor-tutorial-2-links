@@ -13,7 +13,9 @@ class LinkCreate extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.refs.input.value);
+
+        const url = this.refs.input.value;
+        Meteor.call('links.insert', url);
     }
 
     render() {
